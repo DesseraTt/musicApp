@@ -1,0 +1,32 @@
+"filename", "language", "JSON with Comments", "JSON", "TypeScript", "Markdown", "JavaScript", "comment", "blank", "total"
+"c:\Users\igor2\Desktop\diplom\musicApp\server\.eslintrc.js", "JavaScript", 0, 0, 0, 0, 25, 0, 1, 26
+"c:\Users\igor2\Desktop\diplom\musicApp\server\README.md", "Markdown", 0, 0, 0, 51, 0, 2, 21, 74
+"c:\Users\igor2\Desktop\diplom\musicApp\server\nest-cli.json", "JSON", 0, 4, 0, 0, 0, 0, 1, 5
+"c:\Users\igor2\Desktop\diplom\musicApp\server\package-lock.json", "JSON", 0, 18650, 0, 0, 0, 0, 1, 18651
+"c:\Users\igor2\Desktop\diplom\musicApp\server\package.json", "JSON", 0, 69, 0, 0, 0, 6, 0, 75
+"c:\Users\igor2\Desktop\diplom\musicApp\server\src\album\album.controller.ts", "TypeScript", 0, 0, 42, 0, 0, 12, 3, 57
+"c:\Users\igor2\Desktop\diplom\musicApp\server\src\album\album.module.ts", "TypeScript", 0, 0, 16, 0, 0, 0, 2, 18
+"c:\Users\igor2\Desktop\diplom\musicApp\server\src\album\album.service.ts", "TypeScript", 0, 0, 41, 0, 0, 22, 4, 67
+"c:\Users\igor2\Desktop\diplom\musicApp\server\src\album\dto\create-album.dto.ts", "TypeScript", 0, 0, 8, 0, 0, 1, 1, 10
+"c:\Users\igor2\Desktop\diplom\musicApp\server\src\album\schemas\album.schema.ts", "TypeScript", 0, 0, 21, 0, 0, 1, 4, 26
+"c:\Users\igor2\Desktop\diplom\musicApp\server\src\app.module.ts", "TypeScript", 0, 0, 19, 0, 0, 0, 2, 21
+"c:\Users\igor2\Desktop\diplom\musicApp\server\src\file\file.module.ts", "TypeScript", 0, 0, 6, 0, 0, 0, 3, 9
+"c:\Users\igor2\Desktop\diplom\musicApp\server\src\file\file.service.ts", "TypeScript", 0, 0, 27, 0, 0, 3, 7, 37
+"c:\Users\igor2\Desktop\diplom\musicApp\server\src\main.ts", "TypeScript", 0, 0, 13, 0, 0, 0, 4, 17
+"c:\Users\igor2\Desktop\diplom\musicApp\server\src\track\dto\create-comment.dto.ts", "TypeScript", 0, 0, 6, 0, 0, 0, 2, 8
+"c:\Users\igor2\Desktop\diplom\musicApp\server\src\track\dto\create-tag.dto.ts", "TypeScript", 0, 0, 5, 0, 0, 1, 2, 8
+"c:\Users\igor2\Desktop\diplom\musicApp\server\src\track\dto\create-track.dto.ts", "TypeScript", 0, 0, 5, 0, 0, 0, 1, 6
+"c:\Users\igor2\Desktop\diplom\musicApp\server\src\track\schemas\comment.schema.ts", "TypeScript", 0, 0, 15, 0, 0, 0, 6, 21
+"c:\Users\igor2\Desktop\diplom\musicApp\server\src\track\schemas\tag.schema.ts", "TypeScript", 0, 0, 15, 0, 0, 0, 6, 21
+"c:\Users\igor2\Desktop\diplom\musicApp\server\src\track\schemas\track.schema.ts", "TypeScript", 0, 0, 22, 0, 0, 0, 10, 32
+"c:\Users\igor2\Desktop\diplom\musicApp\server\src\track\track.controller.ts", "TypeScript", 0, 0, 44, 0, 0, 2, 10, 56
+"c:\Users\igor2\Desktop\diplom\musicApp\server\src\track\track.module.ts", "TypeScript", 0, 0, 16, 0, 0, 0, 3, 19
+"c:\Users\igor2\Desktop\diplom\musicApp\server\src\track\track.service.ts", "TypeScript", 0, 0, 50, 0, 0, 0, 13, 63
+"c:\Users\igor2\Desktop\diplom\musicApp\server\src\user\dto\create-user.dto.ts", "TypeScript", 0, 0, 6, 0, 0, 0, 1, 7
+"c:\Users\igor2\Desktop\diplom\musicApp\server\src\user\schemas\user.schema.ts", "TypeScript", 0, 0, 21, 0, 0, 0, 9, 30
+"c:\Users\igor2\Desktop\diplom\musicApp\server\src\user\user.controller.ts", "TypeScript", 0, 0, 49, 0, 0, 6, 4, 59
+"c:\Users\igor2\Desktop\diplom\musicApp\server\src\user\user.module.ts", "TypeScript", 0, 0, 17, 0, 0, 1, 1, 19
+"c:\Users\igor2\Desktop\diplom\musicApp\server\src\user\user.service.ts", "TypeScript", 0, 0, 67, 0, 0, 12, 11, 90
+"c:\Users\igor2\Desktop\diplom\musicApp\server\tsconfig.build.json", "JSON", 0, 3, 0, 0, 0, 2, 0, 5
+"c:\Users\igor2\Desktop\diplom\musicApp\server\tsconfig.json", "JSON with Comments", 15, 0, 0, 0, 0, 0, 1, 16
+"Total", "-", 15, 18726, 531, 51, 25, 71, 134, 19553

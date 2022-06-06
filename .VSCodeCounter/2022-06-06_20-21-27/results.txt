@@ -1,0 +1,69 @@
+Date : 2022-06-06 20:21:27
+Directory : c:\Users\igor2\Desktop\diplom\musicApp\server
+Total : 30 files,  19348 codes, 71 comments, 134 blanks, all 19553 lines
+
+Languages
++--------------------+------------+------------+------------+------------+------------+
+| language           | files      | code       | comment    | blank      | total      |
++--------------------+------------+------------+------------+------------+------------+
+| JSON               |          4 |     18,726 |          8 |          2 |     18,736 |
+| TypeScript         |         23 |        531 |         61 |        109 |        701 |
+| Markdown           |          1 |         51 |          2 |         21 |         74 |
+| JavaScript         |          1 |         25 |          0 |          1 |         26 |
+| JSON with Comments |          1 |         15 |          0 |          1 |         16 |
++--------------------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                              | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                 |         30 |     19,348 |         71 |        134 |     19,553 |
+| src                                                                               |         23 |        531 |         61 |        109 |        701 |
+| src\album                                                                         |          5 |        128 |         36 |         14 |        178 |
+| src\album\dto                                                                     |          1 |          8 |          1 |          1 |         10 |
+| src\album\schemas                                                                 |          1 |         21 |          1 |          4 |         26 |
+| src\file                                                                          |          2 |         33 |          3 |         10 |         46 |
+| src\track                                                                         |          9 |        178 |          3 |         53 |        234 |
+| src\track\dto                                                                     |          3 |         16 |          1 |          5 |         22 |
+| src\track\schemas                                                                 |          3 |         52 |          0 |         22 |         74 |
+| src\user                                                                          |          5 |        160 |         19 |         26 |        205 |
+| src\user\dto                                                                      |          1 |          6 |          0 |          1 |          7 |
+| src\user\schemas                                                                  |          1 |         21 |          0 |          9 |         30 |
++-----------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| filename                                                                          | language           | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| c:\Users\igor2\Desktop\diplom\musicApp\server\.eslintrc.js                        | JavaScript         |         25 |          0 |          1 |         26 |
+| c:\Users\igor2\Desktop\diplom\musicApp\server\README.md                           | Markdown           |         51 |          2 |         21 |         74 |
+| c:\Users\igor2\Desktop\diplom\musicApp\server\nest-cli.json                       | JSON               |          4 |          0 |          1 |          5 |
+| c:\Users\igor2\Desktop\diplom\musicApp\server\package-lock.json                   | JSON               |     18,650 |          0 |          1 |     18,651 |
+| c:\Users\igor2\Desktop\diplom\musicApp\server\package.json                        | JSON               |         69 |          6 |          0 |         75 |
+| c:\Users\igor2\Desktop\diplom\musicApp\server\src\album\album.controller.ts       | TypeScript         |         42 |         12 |          3 |         57 |
+| c:\Users\igor2\Desktop\diplom\musicApp\server\src\album\album.module.ts           | TypeScript         |         16 |          0 |          2 |         18 |
+| c:\Users\igor2\Desktop\diplom\musicApp\server\src\album\album.service.ts          | TypeScript         |         41 |         22 |          4 |         67 |
+| c:\Users\igor2\Desktop\diplom\musicApp\server\src\album\dto\create-album.dto.ts   | TypeScript         |          8 |          1 |          1 |         10 |
+| c:\Users\igor2\Desktop\diplom\musicApp\server\src\album\schemas\album.schema.ts   | TypeScript         |         21 |          1 |          4 |         26 |
+| c:\Users\igor2\Desktop\diplom\musicApp\server\src\app.module.ts                   | TypeScript         |         19 |          0 |          2 |         21 |
+| c:\Users\igor2\Desktop\diplom\musicApp\server\src\file\file.module.ts             | TypeScript         |          6 |          0 |          3 |          9 |
+| c:\Users\igor2\Desktop\diplom\musicApp\server\src\file\file.service.ts            | TypeScript         |         27 |          3 |          7 |         37 |
+| c:\Users\igor2\Desktop\diplom\musicApp\server\src\main.ts                         | TypeScript         |         13 |          0 |          4 |         17 |
+| c:\Users\igor2\Desktop\diplom\musicApp\server\src\track\dto\create-comment.dto.ts | TypeScript         |          6 |          0 |          2 |          8 |
+| c:\Users\igor2\Desktop\diplom\musicApp\server\src\track\dto\create-tag.dto.ts     | TypeScript         |          5 |          1 |          2 |          8 |
+| c:\Users\igor2\Desktop\diplom\musicApp\server\src\track\dto\create-track.dto.ts   | TypeScript         |          5 |          0 |          1 |          6 |
+| c:\Users\igor2\Desktop\diplom\musicApp\server\src\track\schemas\comment.schema.ts | TypeScript         |         15 |          0 |          6 |         21 |
+| c:\Users\igor2\Desktop\diplom\musicApp\server\src\track\schemas\tag.schema.ts     | TypeScript         |         15 |          0 |          6 |         21 |
+| c:\Users\igor2\Desktop\diplom\musicApp\server\src\track\schemas\track.schema.ts   | TypeScript         |         22 |          0 |         10 |         32 |
+| c:\Users\igor2\Desktop\diplom\musicApp\server\src\track\track.controller.ts       | TypeScript         |         44 |          2 |         10 |         56 |
+| c:\Users\igor2\Desktop\diplom\musicApp\server\src\track\track.module.ts           | TypeScript         |         16 |          0 |          3 |         19 |
+| c:\Users\igor2\Desktop\diplom\musicApp\server\src\track\track.service.ts          | TypeScript         |         50 |          0 |         13 |         63 |
+| c:\Users\igor2\Desktop\diplom\musicApp\server\src\user\dto\create-user.dto.ts     | TypeScript         |          6 |          0 |          1 |          7 |
+| c:\Users\igor2\Desktop\diplom\musicApp\server\src\user\schemas\user.schema.ts     | TypeScript         |         21 |          0 |          9 |         30 |
+| c:\Users\igor2\Desktop\diplom\musicApp\server\src\user\user.controller.ts         | TypeScript         |         49 |          6 |          4 |         59 |
+| c:\Users\igor2\Desktop\diplom\musicApp\server\src\user\user.module.ts             | TypeScript         |         17 |          1 |          1 |         19 |
+| c:\Users\igor2\Desktop\diplom\musicApp\server\src\user\user.service.ts            | TypeScript         |         67 |         12 |         11 |         90 |
+| c:\Users\igor2\Desktop\diplom\musicApp\server\tsconfig.build.json                 | JSON               |          3 |          2 |          0 |          5 |
+| c:\Users\igor2\Desktop\diplom\musicApp\server\tsconfig.json                       | JSON with Comments |         15 |          0 |          1 |         16 |
+| Total                                                                             |                    |     19,348 |         71 |        134 |     19,553 |
++-----------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
