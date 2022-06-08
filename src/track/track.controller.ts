@@ -3,6 +3,7 @@ import {TrackService} from "./track.service";
 import {CreateTrackDto} from "./dto/create-track.dto";
 import {ObjectId} from "mongoose";
 import {CreateCommentDto} from "./dto/create-comment.dto";
+import {CreateTagDto} from "./dto/create-tag.dto";
 import {FileFieldsInterceptor} from "@nestjs/platform-express";
 
 
@@ -46,8 +47,12 @@ export class TrackController {
         // console.log(dto)
         return this.trackService.addComment(dto);
     }
+    @Post('/tag')
+    addTag(@Body() dto: CreateTagDto) {
+        // console.log(dto)
+        return this.trackService.addTag(dto);
+    }
 
-    
     @Post('/listen/:id')
     listen(@Param('id') id: ObjectId) {
         // console.log(id)

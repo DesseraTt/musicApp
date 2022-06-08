@@ -24,6 +24,10 @@ constructor(@InjectModel(User.name) private readonly userModel: Model<UserDocume
         let today=new Date();
         let curDate = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
         let  newUser = await this.userModel.create({...dto,date:curDate,picture:''});
+
+        let newAlbum = await this.albumModel.create({name: 'Избранное', decription: 'Избранные фотографии',picture: 'image/612d11b7-a727-4dc2-b0b6-8450b84e521a.jpg'});
+
+        newUser.albums.push(newAlbum._id);
         return newUser;
         
     }

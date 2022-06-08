@@ -15,7 +15,7 @@ export class AlbumService {
     //create album
     async create(dto: CreateAlbumDto, picture): Promise<AlbumDocument> {
         const picturePath = this.fileService.createFile(FileType.IMAGE, picture);
-        const createdAlbum = await this.albumModel.create({...dto, picture: picturePath});
+        const createdAlbum = await this.albumModel.create({...dto, picture: picturePath,date: new Date()});
      
         return createdAlbum;
     }
@@ -39,7 +39,7 @@ export class AlbumService {
     }
     //get one album
     async getOne(id: ObjectId): Promise<AlbumDocument> {
-        const album = await this.albumModel.findById(id);
+        const album = await (await this.albumModel.findById(id)).populate('tracks');
         return album;
     }
     //delete album

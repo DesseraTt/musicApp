@@ -42,8 +42,11 @@ export class UserController {
         return this.userService.delete(id);
     }
     //add album to user
-    addAlbum(@Body() userId:ObjectId,albumId: ObjectId) {
-        return this.userService.addAlbum(userId,albumId);
+    @Post('/addAlbum')
+    addAlbum(@Body() obj: Object) {
+        console.log(obj)
+        // const [userId,albumId] = obj;
+        return this.userService.addAlbum(obj["userId"],obj["albumId"]);
     }
   
     //add picture to user

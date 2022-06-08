@@ -1,7 +1,8 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import {Document} from 'mongoose';
 import * as mongoose from 'mongoose'
-
+import {Tag} from "./tag.schema";
+import {Comment} from "./comment.schema";
 export type TrackDocument = Track & Document;
 
 @Schema()
@@ -26,6 +27,9 @@ export class Track {
 
     @Prop({type: [{type: mongoose.Schema.Types.ObjectId, ref: 'Comment'}]})
     comments: Comment[];
+    
+    @Prop({type: [{type: mongoose.Schema.Types.ObjectId, ref: 'Tag'}]})
+    tags: Tag[];
 }
 
 export const TrackSchema = SchemaFactory.createForClass(Track);

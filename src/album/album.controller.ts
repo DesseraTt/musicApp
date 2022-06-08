@@ -14,7 +14,8 @@ export class AlbumController {
     ]))
     create(@UploadedFiles() files,@Body() dto: CreateAlbumDto) {
         const {picture} = files;
-        return this.albumService.create(dto,picture);
+        console.log(dto)
+        return this.albumService.create(dto,picture[0]);
     }
     @Get()
     getAll(@Query('count') count: number,
@@ -46,8 +47,9 @@ export class AlbumController {
     }
     //add track
     @Post('/track')
-    addTrack(@Body() albumId:ObjectId, @Body() trackId: ObjectId) {
-        return this.albumService.addTrack(albumId,trackId);
+    addTrack(@Body() obj: Object) {
+        console.log(obj)
+        return this.albumService.addTrack(obj["albumId"],obj["trackId"]);
     }
     //remove track
     // @Delete('/track')
