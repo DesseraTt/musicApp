@@ -62,5 +62,13 @@ export class AlbumService {
         })
         return albums;
     }
+    // createAlbumByTags(tags: string[]) {
+    //     return this.albumModel.create({
+    //         name: "Album by tags",
+    //         tags: tags,
+    //         date: new Date()
+    //     })
+    // }
+
 }
 

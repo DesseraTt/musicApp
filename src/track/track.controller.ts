@@ -58,4 +58,15 @@ export class TrackController {
         // console.log(id)
         return this.trackService.listen(id);
     }
+
+
+    //search popular tracks
+    @Post('/popular')
+    getPopularTags(@Query('count') count: number) {
+        return this.trackService.getPopularTags(count);
+    }
+    @Post('/recommend')
+    recomendTracksByTags(@Body('tags') tags: ObjectId[]) {
+        return this.trackService.recomendTracksByTags(tags);
+    }
 }

@@ -56,4 +56,9 @@ export class AlbumController {
     // removeTrack(@Body() albumId:ObjectId, @Body() trackId: ObjectId) {
     //     return this.albumService.delete(albumId,trackId);
     // }
+    //create album by tags in track
+    // @Post('/album/tags')
+    // createAlbumByTags(@Body() tags: string[]) {
+    //     return this.albumService.createAlbumByTags(tags);
+    // }
 }

@@ -89,6 +89,55 @@ export class TrackService {
         });
         return tracks;
     }
-    
-    
+
+    async getPopularTags(count = 20): Promise<Tag[]> {
+        const tracks = await this.trackModel.find()
+        .sort({listens:"descending"})
+        .limit(Number(count))
+        .populate('tags');
+        let SetTags = [];
+        tracks.forEach(track => {
+            track.tags.forEach(tag => {
+                if(SetTags.filter(t => t.text === tag.text).length === 0){
+                    SetTags.push(tag);
+                }
+            })
+        })
+        return SetTags;
+    }
+
+    async recomendTracksByTags(tags:ObjectId[]): Promise<Track[]> {
+        console.log(tags)
+       //get tags by id
+       let searchedTags = [];
+        await tags.forEach(async (tagId) => {
+        await console.log(tagId)
+        let tag = await this.tagModel.findById(tagId);
+        await console.log(tag)
+        await searchedTags.push(tag);
+         }
+         )
+        console.log(searchedTags)
+         await  console.log(searchedTags)
+         const tracks = await this.trackModel.find()
+            .populate('tags');
+        //get all tracks with same tags
+        let recomendedTracks = [];
+        tracks.forEach(track => {
+            let count = 0;
+            searchedTags.forEach(tag => {
+                if(track.tags.filter(t => t.text === tag.text).length > 0){
+                    count++;
+                }
+            })
+            // if(count > searchedTags.length/2){
+            if(count > 0){
+                recomendedTracks.push(track._id);
+            }
+        })
+        return recomendedTracks;
+    }
+
+
+
 }
