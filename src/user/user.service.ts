@@ -25,9 +25,14 @@ constructor(@InjectModel(User.name) private readonly userModel: Model<UserDocume
         let curDate = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
         let  newUser = await this.userModel.create({...dto,date:curDate,picture:''});
 
-        let newAlbum = await this.albumModel.create({name: 'Избранное', decription: 'Избранные фотографии',picture: 'image/612d11b7-a727-4dc2-b0b6-8450b84e521a.jpg'});
-
+        let newAlbum = await this.albumModel.create({name: 'Избранное', decription: 'Избранные песни',picture: 'image/1f523417-4f29-4f2a-9cc0-31f2400cc8d8.jpg'});
+        let newAlbum2 = await this.albumModel.create({name: 'Рекомендации', decription: 'Ваши рекомендации',picture: 'image/191223e2-4745-4cb6-8514-d7e2a2754a98.jpg'});
+        console.log(newAlbum);
+        console.log(newAlbum2);
         newUser.albums.push(newAlbum._id);
+        newUser.albums.push(newAlbum2._id);
+        newUser.save();
+        console.log(newUser);
         return newUser;
         
     }
@@ -85,7 +90,15 @@ constructor(@InjectModel(User.name) private readonly userModel: Model<UserDocume
         console.log(user);
         return user;
     }
+    //get user albums
+    async getAlbums(userId: ObjectId): Promise<Album[]> {
+        const user = await this.userModel.findById(userId);
+        const albums = await this.albumModel.find({_id: {$in: user.albums}});
+        return albums;
     }
+
+
+}
 
 
     

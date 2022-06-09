@@ -48,6 +48,11 @@ export class UserController {
         // const [userId,albumId] = obj;
         return this.userService.addAlbum(obj["userId"],obj["albumId"]);
     }
+    //get user albums
+    @Post('/albums')
+    getAlbums(@Body() user: Object) {
+        return this.userService.getAlbums(user['userId']);
+    }
   
     //add picture to user
     @Post('/addPicture')

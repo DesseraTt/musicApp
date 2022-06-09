@@ -21,6 +21,7 @@ export class AlbumService {
     }
     //add track to album
     async addTrack(albumId: ObjectId, trackId) {
+        console.log(albumId,trackId)
         const album = await this.albumModel.findById(albumId);
         album.tracks.push(trackId);
         await album.save();
@@ -69,6 +70,7 @@ export class AlbumService {
     //         date: new Date()
     //     })
     // }
+
 
 }
 
