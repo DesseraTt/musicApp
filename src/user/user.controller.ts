@@ -15,8 +15,6 @@ export class UserController {
         { name: 'picture', maxCount: 1 },
     ]))
     registration(@Body() dto: CreateUserDto) {
-        // registration(@UploadedFiles() files,@Body() dto: CreateUserDto) {
-        // const {picture} = files;
         return this.userService.registration(dto);
     }
     //user authorization
@@ -29,31 +27,33 @@ export class UserController {
               @Query('offset') offset: number) {
         return this.userService.getAll(count, offset)
     }
-    @Get('/search')
-    search(@Query('query') query: string) {
-        return this.userService.search(query)
-    }
+    
     @Get(':id')
     getOne(@Param('id') id: ObjectId) {
         return this.userService.getOne(id);
     }
+
+    @Get('/search')
+    search(@Query('query') query: string) {
+        return this.userService.search(query)
+    }
+
     @Delete(':id')
     delete(@Param('id') id: ObjectId) {
         return this.userService.delete(id);
     }
     //add album to user
-    @Post('/addAlbum')
-    addAlbum(@Body() obj: Object) {
-        console.log(obj)
-        // const [userId,albumId] = obj;
-        return this.userService.addAlbum(obj["userId"],obj["albumId"]);
-    }
     //get user albums
     @Post('/albums')
     getAlbums(@Body() user: Object) {
         return this.userService.getAlbums(user['userId']);
     }
-  
+  @Post('/addAlbum')
+    addAlbum(@Body() obj: Object) {
+        console.log(obj)
+        // const [userId,albumId] = obj;
+        return this.userService.addAlbum(obj["userId"],obj["albumId"]);
+    }
     //add picture to user
     @Post('/addPicture')
     @UseInterceptors(FileFieldsInterceptor([

@@ -38,6 +38,7 @@ constructor(@InjectModel(User.name) private readonly userModel: Model<UserDocume
     }
 
     //user registration
+
     async authorization(inp:object): Promise<User> {
         //check if user exists
         const user = await this.userModel.findOne({email:inp["email"], password:inp["password"]});
@@ -46,6 +47,7 @@ constructor(@InjectModel(User.name) private readonly userModel: Model<UserDocume
         }
         return user;
     }
+
     async getAll(count = 10, offset = 0): Promise<User[]> {
         const users = await this.userModel.find();
         return users;
@@ -60,14 +62,7 @@ constructor(@InjectModel(User.name) private readonly userModel: Model<UserDocume
         const user = await this.userModel.findByIdAndDelete(id);
         return user._id
     }
-    //add album to user
-    async addAlbum(userId: ObjectId, albumId): Promise<User> {
-        const user = await this.userModel.findById(userId);
-        const album = await this.albumModel.findById(albumId);
-        user.albums.push(albumId);
-        await user.save();
-        return user;
-    }
+    
     //search user
     async search(query: string): Promise<User[]> {
         const users = await this.userModel.find({
@@ -77,11 +72,8 @@ constructor(@InjectModel(User.name) private readonly userModel: Model<UserDocume
     }
     //add photo to user
     async addPicture(userId: ObjectId, picture): Promise<User> {
-        // const user = await this.userModel.findById(userId);
         let picturePath = this.fileService.createFile(FileType.IMAGE, picture);
         console.log('picturepath:'+picturePath);
-        // await this.userModel.findByIdAndUpdate(userId, {picture: picturePath} );
-    //    user.set(picture,picturePath);
         const user = await this.userModel.findById(userId,function(err,doc){
            if(err) console.log(err);
               doc.picture = picturePath;
@@ -91,6 +83,15 @@ constructor(@InjectModel(User.name) private readonly userModel: Model<UserDocume
         return user;
     }
     //get user albums
+    
+    async addAlbum(userId: ObjectId, albumId): Promise<User> {
+        const user = await this.userModel.findById(userId);
+        const album = await this.albumModel.findById(albumId);
+        user.albums.push(albumId);
+        await user.save();
+        return user;
+    }
+
     async getAlbums(userId: ObjectId): Promise<Album[]> {
         const user = await this.userModel.findById(userId);
         const albums = await this.albumModel.find({_id: {$in: user.albums}});

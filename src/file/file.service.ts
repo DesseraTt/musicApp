@@ -30,7 +30,11 @@ export class FileService{
     }
 
     removeFile(fileName: string) {
-
+        try {
+            const filePath = path.resolve(__dirname, '..', 'static', fileName)
+            fs.unlinkSync(filePath)
+        } catch (e) {
+            throw new HttpException(e.message, HttpStatus.INTERNAL_SERVER_ERROR)
+        }
     }
-
 }

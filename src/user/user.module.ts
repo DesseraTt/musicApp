@@ -1,6 +1,5 @@
 import { Module } from "@nestjs/common";
 import { UserController } from "./user.controller";
-//import album,album schema
 import {Album, AlbumSchema} from "../album/schemas/album.schema";
 import {AlbumModule} from "../album/album.module";
 import { UserService } from "./user.service";

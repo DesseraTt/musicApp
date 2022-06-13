@@ -113,7 +113,7 @@ export class TrackService {
         await tags.forEach(async (tagId) => {
         await console.log(tagId)
         let tag = await this.tagModel.findById(tagId);
-        await console.log(tag)
+         console.log(tag)
         await searchedTags.push(tag);
          }
          )
@@ -132,7 +132,7 @@ export class TrackService {
             })
             // if(count > searchedTags.length/2){
             if(count > 0){
-                recomendedTracks.push(track._id);
+                recomendedTracks.push(track);
             }
         })
         return recomendedTracks;

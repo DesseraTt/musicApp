@@ -17,15 +17,16 @@ export class AlbumController {
         console.log(dto)
         return this.albumService.create(dto,picture[0]);
     }
+   
+    @Get('/search')
+    search(@Query('query') query: string) {
+        return this.albumService.search(query)
+    }
     @Get()
     getAll(@Query('count') count: number,
 
             @Query('offset') offset: number) {
         return this.albumService.getAll(count, offset)
-    }
-    @Get('/search')
-    search(@Query('query') query: string) {
-        return this.albumService.search(query)
     }
     @Get(':id')
     getOne(@Param('id') id: ObjectId) {
@@ -51,11 +52,11 @@ export class AlbumController {
         console.log(obj)
         return this.albumService.addTrack(obj["albumId"],obj["trackId"]);
     }
-    //remove track
-    // @Delete('/track')
-    // removeTrack(@Body() albumId:ObjectId, @Body() trackId: ObjectId) {
-    //     return this.albumService.delete(albumId,trackId);
-    // }
+
+    @Delete('/track')
+    removeTrack(@Body() albumId:ObjectId, @Body() trackId: ObjectId) {
+        return this.albumService.removeTrack(albumId,trackId);
+    }
     //create album by tags in track
     // @Post('/album/tags')
     // createAlbumByTags(@Body() tags: string[]) {

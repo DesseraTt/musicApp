@@ -6,10 +6,14 @@ import { Model, ObjectId } from 'mongoose';
 import { CreateAlbumDto } from '../album/dto/create-album.dto';
 import {FileService, FileType} from "../file/file.service";
 import  {Track,TrackDocument} from "../track/schemas/track.schema";
+import {TrackService} from "../track/track.service";
 @Injectable()
 export class AlbumService {
-    constructor(@InjectModel(Album.name)
+    constructor(
+    @InjectModel(Album.name)
      private readonly albumModel: Model<AlbumDocument>,
+     @InjectModel(Track.name) 
+     private readonly trackModel:Model<TrackDocument>,
      private fileService: FileService) { }
 
     //create album
@@ -26,13 +30,13 @@ export class AlbumService {
         album.tracks.push(trackId);
         await album.save();
     }
-    // //remove track from album
-    // async removeTrack(albumId: ObjectId, trackId: ObjectId) {
-    //     const album = await this.albumModel.findById(albumId);
-    //     const track = await trackModel.findById(trackId);
-    //     album.tracks.filter(el=>el!=track);
-    //     await album.save();
-    // }
+    //remove track from album
+    async removeTrack(albumId: ObjectId, trackId: ObjectId) {
+        const album = await this.albumModel.findById(albumId);
+        const track = await this.trackModel.findById(trackId);
+        album.tracks.filter(el=>el!=track);
+        await album.save();
+    }
     //get all albums
     async getAll(count = 10, offset = 0): Promise<AlbumDocument[]> {
         const albums = await this.albumModel.find().skip(Number(offset)).limit(Number(count));
@@ -40,7 +44,8 @@ export class AlbumService {
     }
     //get one album
     async getOne(id: ObjectId): Promise<AlbumDocument> {
-        const album = await (await this.albumModel.findById(id)).populate('tracks');
+        console.log(id)
+        const album = await ( this.albumModel.findById(id).populate('tracks'));
         return album;
     }
     //delete album
@@ -48,14 +53,7 @@ export class AlbumService {
         const album = await this.albumModel.findByIdAndDelete(id);
         return album._id
     }
-    //add comment to album
-    // async addComment(dto: CreateAlbumDto): Promise<AlbumDocument> {
-    //     const album = await this.albumModel.findById(dto.albumId);
-    //     const comment = await this.albumModel.create({ ...dto })
-    //     album.comments.push(comment._id)
-    //     await album.save();
-    //     return comment;
-    // }
+
     //search albums
     async search(query: string): Promise<AlbumDocument[]> {
         const albums = await this.albumModel.find({
@@ -63,14 +61,5 @@ export class AlbumService {
         })
         return albums;
     }
-    // createAlbumByTags(tags: string[]) {
-    //     return this.albumModel.create({
-    //         name: "Album by tags",
-    //         tags: tags,
-    //         date: new Date()
-    //     })
-    // }
-
-
 }
 
