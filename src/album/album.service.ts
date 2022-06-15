@@ -25,9 +25,17 @@ export class AlbumService {
     }
     //add track to album
     async addTrack(albumId: ObjectId, trackId) {
-        console.log(albumId,trackId)
+        // console.log(albumId,trackId)
+     
         const album = await this.albumModel.findById(albumId);
+           //check if track is already in album
+              if(album.tracks.includes(trackId)){
+                    console.log('track already in album')
+                }   
+                else{
+
         album.tracks.push(trackId);
+                }
         await album.save();
     }
     //remove track from album
