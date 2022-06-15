@@ -86,7 +86,7 @@ export class TrackService {
         const tracks = await this.trackModel.find({
             name: {$regex: new RegExp(query, 'i')}
           
-        });
+        }).sort({listens:"descending"});
         return tracks;
     }
 

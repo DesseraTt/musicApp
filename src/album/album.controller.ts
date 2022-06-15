@@ -53,10 +53,16 @@ export class AlbumController {
         return this.albumService.addTrack(obj["albumId"],obj["trackId"]);
     }
 
-    @Delete('/track')
-    removeTrack(@Body() albumId:ObjectId, @Body() trackId: ObjectId) {
-        return this.albumService.removeTrack(albumId,trackId);
+    // @Post('/removetrack')
+    // removeTrack(@Body() obj:Object) {
+    //     return this.albumService.removeTrack(obj["albumId"],obj["trackId"]);
+    // }
+    // remove track
+    @Post('/removetrack')
+    removeTrack(@Body() obj: Object) {
+        return this.albumService.removeTrack(obj);
     }
+
     //create album by tags in track
     // @Post('/album/tags')
     // createAlbumByTags(@Body() tags: string[]) {

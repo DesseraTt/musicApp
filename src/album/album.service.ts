@@ -31,11 +31,28 @@ export class AlbumService {
         await album.save();
     }
     //remove track from album
-    async removeTrack(albumId: ObjectId, trackId: ObjectId) {
+    // async removeTrack(albumId: ObjectId, trackId: ObjectId) {
+    //     const album = await this.albumModel.findById(albumId);
+    //     // console.log(album)
+    //     const track = await this.trackModel.findById(trackId);
+    //     // console.log(track)
+    //     await console.log(typeof(album.tracks[0]),album.tracks[0], 0)
+    //     await console.log(typeof(track._id),track._id,0)
+    //     await console.log(album.tracks[0]==track)
+    //     // console.log(album.tracks[1])
+    //     album.tracks= await album.tracks.filter(el=>el!=track);
+    //     // console.log(album.tracks)
+    //     await album.save();
+    //     return album;
+    // }
+    //remove track from album
+    async removeTrack(obj) {
+        let albumId=obj.albumId;
+        let trackId=obj.trackId;
         const album = await this.albumModel.findById(albumId);
-        const track = await this.trackModel.findById(trackId);
-        album.tracks.filter(el=>el!=track);
-        await album.save();
+        album.tracks= await album.tracks.filter(el=>el!=trackId);
+        await album.save(); 
+        return album;
     }
     //get all albums
     async getAll(count = 10, offset = 0): Promise<AlbumDocument[]> {
